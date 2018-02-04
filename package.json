@@ -2,6 +2,7 @@
   "name": "react-component-playground",
   "version": "0.1.0",
   "author": "Tomasz Ducin <tomasz@ducin.it>",
+  "homepage": "https://ducin-public.github.io/react-component-playground/",
   "private": true,
   "dependencies": {
     "babel-polyfill": "^6.26.0",
