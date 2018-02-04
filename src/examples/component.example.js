@@ -11,7 +11,7 @@ export const componentExample = `<Button buttonStyle={{
   minWidth: 200,
   outline: 0,
   padding: 10
-}}>
+}} onClick={callback}>
   <p>My Button</p>
 </Button>
 `;

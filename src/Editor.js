@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Playground from 'component-playground';
-import Button from './components/button';
+import Button from './components/Button';
+import ButtonStyledComponents from './components/ButtonStyledComponents';
 import { componentExample } from './examples/component.example';
+import { componentStyledExample } from './examples/component-styled.example';
 
 import './Editor.css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/zenburn.css';
+
+const callback = msg => alert('damn cool!');
 
 export class Editor extends Component {
   render() {
@@ -16,7 +20,15 @@ export class Editor extends Component {
         <Playground
           theme="zenburn"
           codeText={componentExample}
-          scope={{ React: React, Button: Button }}
+          scope={{ React: React, Button: Button, callback: callback }}
+        />
+
+        <h2>Default w/<code>styled-components</code></h2>
+
+        <Playground
+          theme="zenburn"
+          codeText={componentStyledExample}
+          scope={{ React: React, ButtonStyledComponents: ButtonStyledComponents, callback: callback }}
         />
 
         <h2>Collapsable Code</h2>
@@ -24,7 +36,7 @@ export class Editor extends Component {
         <Playground
           theme="zenburn"
           codeText={componentExample}
-          scope={{ React: React, Button: Button }}
+          scope={{ React: React, Button: Button, callback: callback }}
           collapsableCode
         />
 
@@ -33,7 +45,7 @@ export class Editor extends Component {
         <Playground
           theme="zenburn"
           codeText={componentExample}
-          scope={{ React: React, Button: Button }}
+          scope={{ React: React, Button: Button, callback: callback }}
           collapsableCode
           initiallyExpanded
         />
@@ -43,7 +55,7 @@ export class Editor extends Component {
         <Playground
           theme="zenburn"
           codeText={componentExample}
-          scope={{ React: React, Button: Button }}
+          scope={{ React: React, Button: Button, callback: callback }}
           selectedLines={[2, 3, 4, 9]}
         />
 
@@ -52,7 +64,7 @@ export class Editor extends Component {
         <Playground
           theme="zenburn"
           codeText={componentExample}
-          scope={{ React: React, Button: Button }}
+          scope={{ React: React, Button: Button, callback: callback }}
           propDescriptionMap={{
             buttonStyle: "style object for inline styles"
           }}
